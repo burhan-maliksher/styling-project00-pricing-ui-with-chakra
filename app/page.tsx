@@ -1,91 +1,45 @@
+"use client"
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
-
+import {Button, Box, Flex, VStack,HStack,Stack,Text, Heading } from '@chakra-ui/react'
+import { Header } from './components/Header'
 const inter = Inter({ subsets: ['latin'] })
-
+import { Pricing } from './components/Pricing'
+import { ChakraProvider } from '@chakra-ui/react'
+import {Features} from './components/Features'
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <>
+    <ChakraProvider>
+      <Header />
+      <Pricing/>
+      <Features/>
+    </ChakraProvider>
+    {/* <div align="center"> */}
+      {/* <Box  bg="greenyellow" w="300px" h="300px" m="atuo" mt="32px" ml="210px" p="20px">
+        <Text color="blue.600" fontFamily="monospace" fontSize="32px">this is google chakra</Text>
+        <Button ml="32px" mt="32px" colorScheme="blue" _hover={{background:'green'}}>click me</Button>
+      </Box> */}
+      {/* <Heading as="h1" fontSize="20px"> chakra ui learning</Heading> */}
+      {/* <Text noOfLines={2}>is a box</Text> */}
+      {/* <Flex  align="center" justify="space-between"> */}
+      {/* <Stack spacing="24" direction="row">
+        <Box as='section' bg='green' w='120px' h='140px' color='yellow'>
+          <Text as="i">this is a box</Text>
+        </Box>
+        <Box as='section' bg='red' w='100px' h='100px' color='yellow'>
+        this is a box
+        </Box>
+        <Box as='section' bg='blue' w='300px' h='100px' color='yellow'>
+          this is a box
+        </Box>
+        <Box as='section' bg='orange' w='100px' h='200px'  color='yellow'>
+          this is a box
+        </Box>
+      </Stack>  */}
+      {/* </Flex> */}
+    {/* </div> */}
+    </>
   )
 }
